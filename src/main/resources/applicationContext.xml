@@ -7,11 +7,12 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <context:property-placeholder location="classpath:sport.properties"/>
     <!-- Define your beans here -->
-    <bean
-        id="myFortuneService"
-        class="edu.cnm.deepdive.springdemo.HappyFortuneService">
-    </bean>
+<!--    <bean-->
+<!--        id="myFortuneService"-->
+<!--        class="edu.cnm.deepdive.springdemo.HappyFortuneService">-->
+<!--    </bean>-->
 
     <bean
         id="myCoach"
@@ -25,6 +26,22 @@
 
         <!-- set up setter injection -->
         <property name="fortuneService" ref="myFortuneService"/>
+
+        <property name="emailAddress" value="${foo.email}"/>
+
+        <property name="team" value="${foo.team}"/>
+    </bean>
+
+    <bean
+        id="myFortuneService"
+        class="edu.cnm.deepdive.springdemo.RandomFortuneService">
+    </bean>
+
+    <bean
+        id="myGolfCoach"
+        class="edu.cnm.deepdive.springdemo.GolfCoach">
+
+        <constructor-arg ref="myFortuneService"/>
     </bean>
     
 </beans>

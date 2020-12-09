@@ -2,21 +2,18 @@ package edu.cnm.deepdive.springdemo;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class SetterDemoApp {
+public class PracticeHelloSpringApp {
 
   public static void main(String[] args) {
-
-    // load the configuration file
     ClassPathXmlApplicationContext context =
         new ClassPathXmlApplicationContext("applicationContext.xml");
-    //retrieve beans from the spring container
-    CricketCoach theCoach = context.getBean("myCricketCoach", CricketCoach.class);
-    //call methods on the bean
+
+    Coach theCoach = context.getBean("myGolfCoach", Coach.class);
+
     System.out.println(theCoach.getDailyWorkout());
     System.out.println(theCoach.getDailyFortune());
-    System.out.println(theCoach.getEmailAddress());
-    System.out.println("The team is: " + theCoach.getTeam());
-    //close context
+
     context.close();
   }
+
 }

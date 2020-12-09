@@ -2,6 +2,12 @@ package edu.cnm.deepdive.springdemo;
 
 public class MotorcycleCoach implements Coach {
 
+  private FortuneService fortuneService;
+
+  public MotorcycleCoach(FortuneService ThefortuneService) {
+    fortuneService = ThefortuneService;
+  }
+
   @Override
   public String getDailyWorkout() {
     return "Ride Route 66!";
@@ -9,6 +15,6 @@ public class MotorcycleCoach implements Coach {
 
   @Override
   public String getDailyFortune() {
-    return null;
+    return "Never forget: " + fortuneService.getFortune();
   }
 }

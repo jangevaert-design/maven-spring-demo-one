@@ -9,8 +9,13 @@
 
     <!-- Define your beans here -->
     <bean
+        id="myFortuneService"
+        class="edu.cnm.deepdive.springdemo.HappyFortuneService">
+    </bean>
+    <bean
         id="myCoach"
-        class="edu.cnm.deepdive.springdemo.TrackCoach">
+        class="edu.cnm.deepdive.springdemo.BaseballCoach">
+        <constructor-arg ref="myFortuneService"/>
     </bean>
     
 </beans>

@@ -1,16 +1,14 @@
 package edu.cnm.deepdive.springdemo;
 
-public class BaseballCoach implements Coach {
+public class MotorcycleCoach implements Coach {
 
   @Override
   public String getDailyWorkout() {
-
-    return "spend 30 minutes on batting practice";
+    return "Ride Route 66!";
   }
 
   @Override
   public String getDailyFortune() {
     return null;
   }
-
 }

@@ -9,13 +9,22 @@
 
     <!-- Define your beans here -->
     <bean
-        id="myFortune"
+        id="myFortuneService"
         class="edu.cnm.deepdive.springdemo.HappyFortuneService">
     </bean>
+
     <bean
         id="myCoach"
         class="edu.cnm.deepdive.springdemo.MotorcycleCoach">
-        <constructor-arg ref="myFortune"/>
+        <constructor-arg ref="myFortuneService"/>
+    </bean>
+
+    <bean
+        id="myCricketCoach"
+        class="edu.cnm.deepdive.springdemo.CricketCoach">
+
+        <!-- set up setter injection -->
+        <property name="fortuneService" ref="myFortuneService"/>
     </bean>
     
 </beans>

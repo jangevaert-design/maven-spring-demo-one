@@ -15,8 +15,9 @@
 
     <bean
         id="myCoach"
-        class="edu.cnm.deepdive.springdemo.TrackCoach">
-        <constructor-arg ref="myFortuneService"/>
+        class="edu.cnm.deepdive.springdemo.TrackCoach"
+        scope="prototype">
+
     </bean>
 
 </beans>
